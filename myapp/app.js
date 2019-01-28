@@ -17,6 +17,7 @@ app.use(cors());
 
 app.use((req, res, next)=>{
 
+
     if (req.path==="/login" || req.path=== "/registration"){
         next();
     }
@@ -35,9 +36,9 @@ app.use((req, res, next)=>{
                 res.send(401,{error:"unauthorized"});
                 res.end();
             }
-
-
-
+        }
+        else {
+            res.send(401,{error:"unauthorized"})
         }
 
     }

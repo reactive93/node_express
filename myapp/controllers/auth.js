@@ -4,7 +4,13 @@ const bcrypt = require("bcrypt");
 const utilAuth = require("./utilAuth");
 const jsonwebToken = require("jsonwebtoken");
 
+/**
+ *
+ * @param {Request} req
+ * @param  {Response}res
+ */
 function login(req, res) {
+
     const body = req.headers.authorization;
     const spliter_body = body.split(" ");
     const auth = spliter_body[1];
